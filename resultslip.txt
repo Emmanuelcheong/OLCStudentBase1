@@ -1,0 +1,8 @@
+English               71
+Higher Chinese        80
+Chemistry             63
+Geography             72
+Mathematics           60
+Physics               66
+Computing             70
+ComputedL1R5:17
