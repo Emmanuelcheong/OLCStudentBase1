@@ -1,93 +1,76 @@
-# Task 2
 
-# The following program allows the weights of 15 bags of rice to be input. 
-# The correct weight for each bag of rice must be 
-# between 4.9 kg and 5.1 kg inclusive.
+# Task 2 
+# In Singapore, electronic road pricing (ERP) is implemented 
+# on various expressways to regulate traffic. 
+# 
+# Lately there has been a change in the ERP rates at 5 gantries across some expressways. 
 
-# bags_rice = 15
-# upper_bound = 5.1
-# lower_bound = 4.9
-# for count in range(bags_rice):
-#     bag_weight = float(input("Enter the weight of the bag of rice "))
-#     if bag_weight > upper_bound:
-#         print("The bag of rice is overweight")
-#     if bag_weight < lower_bound:
-#         print("The bag of rice is underweight")    
-
-# 7       Edit the program so that it:
-# a.       Accepts the weights for only 10 bags of rice.
-# [1]
-#Task 2.1
-# bags_rice = 10
-# upper_bound = 5.1
-# lower_bound = 4.9
-# for count in range(bags_rice):
-#     bag_weight = float(input("Enter the weight of the bag of rice "))
-#     if bag_weight > upper_bound:
-#         print("The bag of rice is overweight")
-#     if bag_weight < lower_bound:
-#         print("The bag of rice is underweight")    
-
-
-# b.       Prints out the message “The bag of rice is the correct weight” 
-# when a weight entered is between 4.9kg and 5.1 kg inclusive.
-# [2]
-#Task 2.2
-# bags_rice = 10
-# upper_bound = 5.1
-# lower_bound = 4.9
-# for count in range(bags_rice):
-#     bag_weight = float(input("Enter the weight of the bag of rice "))
-#     if bag_weight > upper_bound:
-#         print("The bag of rice is overweight")
-#     if bag_weight < lower_bound:
-#         print("The bag of rice is underweight")    
-#     if lower_bound <= bag_weight <= upper_bound:
-#         print("“The bag of rice is the correct weight”")
+# The following program calculates the change in rates of these 5 gantries.
+gantry_inc = [] 
+gantries = int(input("How many gantries are you entering?: "))
+for i in range(gantries): 
+    while True:
+        expressway = input("Enter name of gantry:") 
+        if len(expressway) < 20 and expressway.isalpha() == True: 
+            break
+        else:
+            print("Gantry name must be only letters and can have a maximum of only 20 letters")
+            continue
+    old = float(input("Enter old rate:")) 
+    new = float(input("Enter new rate:")) 
+    if new > old:
+        gantry_inc.append(new)
+        print(expressway)
+    else:
+        continue
+    change = new - old 
+    print("Change is",change) 
+print(gantry_inc)
 
 
 
-# c.       Prints out the number of bags of rice that were underweight, 
-# as well as the number that were overweight, after the weights of all 
-# the bags have been entered.
-# [5]
-#Task 2.3
-# bags_rice = 10
-# upper_bound = 5.1
-# lower_bound = 4.9
-# under_count = 0
-# over_count = 0
-# for count in range(bags_rice):
-#     bag_weight = float(input("Enter the weight of the bag of rice "))
-#     if bag_weight > upper_bound:
-#         print("The bag of rice is overweight")
-#         over_count += 1
-#     if bag_weight < lower_bound:
-#         print("The bag of rice is underweight") 
-#         under_count += 1   
-#     if lower_bound <= bag_weight <= upper_bound:
-#         print("“The bag of rice is the correct weight”")
-# print(f"There are {under_count} underweight rice bags")
-# print(f"There are {over_count} overweight rice bags")
+# Your program code and output for each of Tasks 2 should be saved 
+# in a single .ipynb file using JupyterLab. For example, your program 
+# code and output for Task 2 should be saved as:
+#  TASK2___.ipynb
 
-# d. Edit your program so that it works for any number of bags of rice.
-# [2]
-# Save your program.
-#Task 2.4
-# bags_rice = int(input("How many rice bags are you inputing?: "))
-# upper_bound = 5.1
-# lower_bound = 4.9
-# under_count = 0
-# over_count = 0
-# for count in range(bags_rice):
-#     bag_weight = float(input("Enter the weight of the bag of rice "))
-#     if bag_weight > upper_bound:
-#         print("The bag of rice is overweight")
-#         over_count += 1
-#     if bag_weight < lower_bound:
-#         print("The bag of rice is underweight") 
-#         under_count += 1   
-#     if lower_bound <= bag_weight <= upper_bound:
-#         print("The bag of rice is the correct weight")
-# print(f"There are {under_count} underweight rice bags")
-# print(f"There are {over_count} overweight rice bags")
+#  Make sure that each of your .ipynb files shows the required output in JupyterLab.
+# For each of the sub-tasks, add a comment using the hash symbol ‘#’ 
+# at the beginning of your code to indicate the sub-task 
+# that the program code belongs to. 
+
+###########################################################
+# 6. Edit the program so that: 
+# a)	It works for any number of gantries. 
+#       The program must display a suitable input message. [1] 
+###########################################################
+# Copy + Paste & Write your code here
+
+
+
+
+###########################################################
+# b)	The name of gantry is accepted if it is made up of only 
+#       letters and is of a maximum length of 20. 
+#       A suitable error message must be displayed and the program 
+#       must loop until the name of the gantry is an input of a maximum of 20 letters. [4] 
+###########################################################
+# Copy + Paste & Write your code here
+
+
+
+
+###########################################################
+# c)	The name of each gantry for which the ERP rate has 
+#       been increased is stored in a list and then displayed. [4] 
+###########################################################
+# Copy + Paste & Write your code here
+
+
+
+
+###########################################################
+# d)	The total number of gantries which saw an increase 
+#       in the ERP rate is displayed. [1] 
+###########################################################
+# Copy + Paste & Write your code here
