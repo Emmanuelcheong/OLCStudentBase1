@@ -10,23 +10,24 @@ gantry_inc = []
 gantries = int(input("How many gantries are you entering?: "))
 for i in range(gantries): 
     while True:
-        expressway = input("Enter name of gantry:") 
-        if len(expressway) < 20 and expressway.isalpha() == True: 
+        expressway = input("Enter name of gantry: ") 
+        if len(expressway) <= 20 and expressway.isalpha() == True: 
             break
         else:
             print("Gantry name must be only letters and can have a maximum of only 20 letters")
             continue
-    old = float(input("Enter old rate:")) 
-    new = float(input("Enter new rate:")) 
-    if new > old:
-        gantry_inc.append(new)
-        print(expressway)
-    else:
-        continue
+    old = float(input("Enter old rate: ")) 
+    new = float(input("Enter new rate: ")) 
     change = new - old 
     print("Change is",change) 
-print(gantry_inc)
+    if new > old:
+        gantry_inc.append(expressway)
+        print(f"The erp has been increased for {expressway}")
+    else:
+        continue
 
+print(f"The gantries which rate has been increased are {gantry_inc}")
+print(f"The total number of gantries which saw an increase in the ERP rate is {len(gantry_inc)}")
 
 
 # Your program code and output for each of Tasks 2 should be saved 
