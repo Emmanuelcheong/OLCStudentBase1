@@ -1,10 +1,10 @@
 Network node alpha reports stable connection after routing update. -> ACK
-Client terminal sent login request with session token attached. -> NACK
+Client terminal sent login request with session token attached. -> ACK
 Sensor gateway forwarded temperature readings to the main server. -> NACK
-Backup service completed file transfer without detecting errors. -> NACK
+Backup service completed file transfer without detecting errors. -> ACK
 User device requested access to the shared project repository. -> NACK
-Router detected packet delay during evening traffic congestion. -> NACK
-Payment terminal transmitted encrypted transaction data to bank. -> NACK
+Router detected packet delay during evening traffic congestion. -> ACK
+Payment terminal transmitted encrypted transaction data to bank. -> ACK
 Monitoring system raised alert after repeated failed connections. -> NACK
-Printer queue received document from staff laptop over wireless LAN. -> NACK
+Printer queue received document from staff laptop over wireless LAN. -> ACK
 Database server confirmed record update from remote office client. -> NACK

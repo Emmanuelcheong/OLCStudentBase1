@@ -119,9 +119,10 @@ def extract_messages(packet_list):
 
 def verify_messages(message_dict):
     dictionary = {}
-    total = 0
-    check = 0
+
+
     for message,checksum in  message_dict.items():
+        total = 0
         for character in message:
             total += ord(character)
         check = total % 256
@@ -172,7 +173,11 @@ dictionary = extract_messages(file_str)
 verified_msg = verify_messages(dictionary)
 write_output(verified_msg,"output.txt")
 # Write your main program here
-
+# test = 'Printer queue received document from staff laptop over wireless LAN.'
+# total = 0
+# for char in test:
+#     total += ord(char)
+# print(total % 256)
 
 ###########################################################
 # Code quality [4 marks]
