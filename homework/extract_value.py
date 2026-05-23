@@ -35,3 +35,14 @@ scores = {
     "Gerald Chan": 65, "Hannah Goh": 88, "Ivan Wong": 93,
     "Jolene Ng": 79, "Kishore Menon": 72, "Liyana Yusof": 85
 }
+good_attendance = {}
+good_scores = {}
+for name, percentage in attendance.items():
+    if percentage >= 90:
+        good_attendance[name] = percentage
+for name,score in scores.items():
+    if score  >= 85:
+        good_scores[name] = score
+for name, num in good_attendance.items():
+    if name in good_attendance and name in good_scores:
+        print(f"Congratulations {name}! With an attendance of {good_attendance[name]}% and a score of {good_scores[name]}, you are awarded the Star Student Award!")

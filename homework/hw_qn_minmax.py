@@ -24,4 +24,26 @@ performance_scores = {
     'Samir': 23, 'Jimmy': 5, 'Bryan': 78, 'Estelle': 9}
 
 # write your code here
-
+highest_emp = ""
+lowest_emp = ""
+total = 0
+count = 0
+non_performers = {}
+highest_score = performance_scores["Alice"]
+lowest_score = performance_scores["Alice"]
+for name,performance in performance_scores.items():
+    total += performance
+    count += 1  
+    if performance > highest_score:
+        highest_score = performance
+        highest_emp = name
+    if performance < lowest_score:
+        lowest_score = performance
+        lowest_emp = name
+    if performance < 50:
+        non_performers[name] = performance
+print(f"The highest performer is {highest_emp}")
+print(f"The lowest performer is {lowest_emp}")
+print(f"The average performance score is {total/count}")
+for name, score in non_performers.items():
+    print(f"{name}, you are underperforming")

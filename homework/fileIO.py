@@ -38,7 +38,26 @@
 # - Use the max in a list algo to find the most frequent vowel.
 #
 # Bonus: Print the results on the screen too (optional)
+with open("308_sherlock.txt","r") as file:
+    sentance_list = file.readlines()
 
+vowel_count = {"a":0, "e":0, "i":0, "o":0 ,"u":0}
+
+for sentance in sentance_list:
+    for char in sentance:
+        if char.lower() in vowel_count:
+            vowel_count[char.lower()] += 1
+
+highest_count = 0
+key = ""
+for vowel,count in vowel_count.items():
+    if count > highest_count:
+        highest_count = count
+        key = vowel
+with open("sherlockvowel.txt","w") as file:
+    for value, count in vowel_count.items():
+        file.write(f"{value} : {count}\n")
+    file.write(f"The vowel {key} has the highest occurence of {highest_count}")
 
 
 

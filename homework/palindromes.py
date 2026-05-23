@@ -35,7 +35,19 @@ sentences = [
 ]
 # write your code here
 
-
+palindroms = []
+for sentance in sentences:
+    new_sentance = ""
+    stripped_sen = sentance.replace(" ","")
+    stripped_sen = sentance.lower()
+    for letter in stripped_sen:
+        if letter.isalpha():
+            new_sentance += letter
+    backwords = new_sentance[::-1]
+    if new_sentance == backwords:
+        palindroms.append(stripped_sen)
+        count+=1
+print(palindroms)
 
 
 

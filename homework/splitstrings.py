@@ -35,8 +35,20 @@ customers = "Alice Johnson;98653263,Catherine Lee;89653215,Johnson Lam;95321453,
 
 
 # write your code for part 1 here
-
-
-
+customer_list = []
+temp_wordstr= ""
+for char in customers:
+    if char != ",":
+        temp_wordstr += char
+    else:
+        customer_list.append(temp_wordstr)
+        temp_wordstr = ""
+customer_list.append(temp_wordstr)
 
 # write your code for part 2 here
+customer_dict = {}
+for value in customer_list:
+    name = value[:value.find(";")]
+    numbers = value[value.find(";")+1:]
+    customer_dict[name] = int(numbers)
+print(customer_dict)
