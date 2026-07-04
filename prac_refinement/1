@@ -1,0 +1,75 @@
+
+# The following program takes in 2 user entries and verifies if the users are Singaporeans 
+# by checking if the first letter of each entry is "S". 
+# If the user is a Singaporean, the program prints a welcome home message. 
+# Otherwise, it prints a welcome to Singapore message.
+
+# ID = ""
+# for i in range(2):
+#     ID = input("Enter ID: ")
+#     if ID[0] == "S":
+#         print("Welcome home!")
+#     else:
+#         print("Welcome to Singapore!")
+
+
+#===============================================
+# Task 2.1
+# Edit the program so that
+# 1.   It takes in 5 entries,[1]
+# 2.   It prints the same welcome home message if the first letter of the entry is either "S" or "T".[2]
+# 3.   The program counts the total number of Singaporeans in the list.[3]
+
+# Copy the Code Above. Write Your Code Here.
+#===============================================
+# ID_list = []
+# Singaporean = []
+# for i in range(5):
+#     ID = input("Enter ID: ")
+#     ID_list.append(ID)
+#     if ID[0] == "S" or ID[0] == "T":
+#         print("Welcome home!")
+#         Singaporean.append(ID)
+#     else:
+#         print("Welcome to Singapore!")
+# print(ID_list)
+# print(len(Singaporean))
+
+
+
+
+
+
+#===============================================
+# Task 2.2
+# Edit the program so that it
+# 4.   Checks that the length of the ID is 9 characters. 
+# 5.   Otherwise, it will produce an error message and keep asking the user to re-enter the ID.[2]
+# 6.   Works for any number of entries.[2]
+
+# Copy the Code Above. Write Your Code Here..
+#===============================================
+ID_list = []
+Singaporean = []
+entry = int(input("How many entries do you want"))
+for i in range(entry):
+    while True:
+        ID = input("Enter ID: ")
+        if len(ID) != 9:
+            print("ID must have eaxctly 9 characters")
+            continue
+        else:
+            break
+    ID_list.append(ID)
+    if ID[0] == "S" or ID[0] == "T":
+        print("Welcome home!")
+        Singaporean.append(ID)
+    else:
+        print("Welcome to Singapore!")
+print(ID_list)
+print(f"There are {len(Singaporean)} Singaporeans")
+
+
+
+
+
