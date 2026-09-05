@@ -26,7 +26,7 @@ def displayFahrenToCelsius(start, end):
     print("Fahrenheit", "Celsius")
 
     for temp in range(start, end + 1):
-        converted_temp = (temp - 32) * 5/9   #5: Logic error, ccalculation was incorrect as formula lacked bracket
+        converted_temp = (temp - 32) * 5/9   #5: Logic error, calculation was incorrect as formula lacked bracket
         print("{:4.1f}      {:4.1f}".format(temp, converted_temp))   #4: Logic error, did not call back "converted_temp"
 
 def displayCelsiusToFahren(start, end):
