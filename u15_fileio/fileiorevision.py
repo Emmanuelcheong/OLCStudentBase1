@@ -337,28 +337,28 @@
 
 # Write your code below.
 # ---------------------------------------------------------
-valid = []
-invalid = []
-invalid_list = []
-with open("q9_scores.txt","r") as file:
-    scores = file.readlines()
-for score in scores:
-    if "\n" in score:
-        stripped_score = score.replace("\n","")
-    else:
-        stripped_score = score
-    if not stripped_score.isdigit():
-        invalid.append(stripped_score)
-        invalid_list.append(score)
-    elif int(stripped_score) < 0 or int(stripped_score) > 100:
-        invalid.append(stripped_score)
-        invalid_list.append(score)
-    else:
-        valid.append(stripped_score)
-print(valid)
-print(invalid)
-with open("invalid_scores.txt","w") as file:
-    file.writelines(invalid_list)
+# valid = []
+# invalid = []
+# invalid_list = []
+# with open("q9_scores.txt","r") as file:
+#     scores = file.readlines()
+# for score in scores:
+#     if "\n" in score:
+#         stripped_score = score.replace("\n","")
+#     else:
+#         stripped_score = score
+#     if not stripped_score.isdigit():
+#         invalid.append(stripped_score)
+#         invalid_list.append(score)
+#     elif int(stripped_score) < 0 or int(stripped_score) > 100:
+#         invalid.append(stripped_score)
+#         invalid_list.append(score)
+#     else:
+#         valid.append(stripped_score)
+# print(valid)
+# print(invalid)
+# with open("invalid_scores.txt","w") as file:
+#     file.writelines(invalid_list)
 
 
 
@@ -401,10 +401,30 @@ with open("invalid_scores.txt","w") as file:
 # Food: 23
 # Books: 15
 # Write your code below.
-# ---------------------------------------------------------
+# # ---------------------------------------------------------
+# total = 0
+# transport = 0
+# books = 0
+# food = 0
+# with open("q10_expenses.txt","r") as file:
+#     data = file.readlines()
+#     expenses = []
+#     expense_dict = {}
+#     for line in data:
+#         expenses.append(line.strip())
+#     for expense in expenses:
+#         category = expense[:expense.find(",")]
+#         cost = int(expense[expense.find(",")+1:])
+#         total += cost
+#         if category == "Transport":
+#             transport += cost
+#         elif category == "Books":
+#             books += cost
+#         else:
+#             food+= cost
 
-
-
+# with open("expense_report.txt","w") as file:
+#     file.write(f"Total spending: {total} \nTransport: {transport}\nFood: {food}\nBooks: {books}")
 
 
 
@@ -444,13 +464,18 @@ with open("invalid_scores.txt","w") as file:
 #     - unit price as a float
 # Write your code below.
 # ---------------------------------------------------------
-
-
-
-
-
-
-
+def read_sales():    #Create function
+    with open("q11_sales.txt","r") as file:    #Open file to be able to read data
+        temp_list = file.readlines()     #takes all lines and puts as list
+        sales = []
+        for line in temp_list:
+            sales.append(line.strip())    #Removes each "\n" from every line taken and adds back to another list
+        output_list = []
+        for content in sales:   
+            temp_list = content.split(",")   #Splits each line taken by the comma
+            new_list = [temp_list[0], int(temp_list[1]), float(temp_list[2])]   #Creates a new list using the split variables
+            output_list.append(new_list)    #Makes a nested list using the data from each line
+    return output_list     #Returns nested list
 
 
 
@@ -465,6 +490,9 @@ with open("invalid_scores.txt","w") as file:
 #     total value = quantity x unit price
 # Write your code below.
 # ---------------------------------------------------------
+def calculate_total(record):    #Defining function
+    total = record[1] * record[2]     #Multiplies quantity with unit price
+    return total   #Returns sum total
 
 
 
@@ -501,9 +529,24 @@ with open("invalid_scores.txt","w") as file:
 #
 # Write your code below.
 # ---------------------------------------------------------
-
-
-
+def write_report(records):    #Defining function
+    total = 0
+    record_dict = {}
+    for record in records:   #Looks through each list in the nested list
+        total += calculate_total(record)   #Calls previous function to get the total
+        record_dict[record[0]] = calculate_total(record)   #Creates a dictionary using the name and the total sales
+    best_selling = ""
+    highest_sales = 0
+    for name,sales in record_dict.items():
+        if sales > highest_sales:   #Loops through to find the best selling item by checking which total sales is the highest
+            highest_sales = sales
+            best_selling = name
+    with open("sales_report.txt", "w") as file:   #Creating new file
+        for name,sales in record_dict.items():   #Writes down all the content in the dictionary
+            file.write(f"{name}: {sales}\n")
+        file.write(f"Grand total: {total}\n")   #Writes down the total sales overall
+        file.write(f"Best Selling Item: {best_selling}")    #Writes down the best selling item
+# write_report([['Pen', 12, 1.5], ['Book', 5, 4.8], ['Eraser', 20, 0.6], ['Pencil', 10, 1.2], ['Ruler', 3, 2.5]])
 
 
 
@@ -525,3 +568,6 @@ with open("invalid_scores.txt","w") as file:
 #
 # Write your code below.
 # ---------------------------------------------------------
+records = read_sales()    #Call previous function to get the nested list
+write_report(records)     #Call previous function to write the sales report text file
+print("Report created successfully")    #Displays message when done

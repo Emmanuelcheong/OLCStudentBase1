@@ -1,4 +1,4 @@
-Amir
-Beth
-Chen
-Divya
+amir
+beth
+chen
+divya

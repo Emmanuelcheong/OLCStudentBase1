@@ -1,0 +1,4 @@
+Total spending: 60 
+Transport: 22
+Food: 23
+Books: 15
